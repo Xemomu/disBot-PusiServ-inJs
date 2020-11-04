@@ -1,6 +1,6 @@
 module.exports = {
-    name: 'ping',
-    description: 'Ping!',
+    name: 'clear',
+    description: 'Clear',
     execute(message, args) {
         const amount = parseInt(args[0]) + 1;
 

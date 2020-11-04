@@ -1,7 +1,7 @@
 module.exports = {
     name: 'serverinfo',
-    description: 'ServerInfo',
-    execute(message, args) {
-        message.channel.send(`Nazwa tego zajebistego serwera: ${message.guild.name}\nLiczba członków: ${message.guild.memberCount}`);
+    description: 'Podstawowe informacje na temat obecnego servera',
+    execute(message) {
+        message.channel.send(`Nazwa tego zajebistego serwera: ${message.guild.name}\nLiczba członków: ${message.guild.memberCount}\nData powstania ${message.guild.createdAt}`);
     },
 };
