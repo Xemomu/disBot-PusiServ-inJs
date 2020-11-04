@@ -9,7 +9,7 @@ try {
 
 module.exports = {
   name: "pruning",
-  description: "Toggle pruning of bot messages",
+  description: "Nie ważne",
   execute(message) {
     if (!config) return;
     config.PRUNING = !config.PRUNING;

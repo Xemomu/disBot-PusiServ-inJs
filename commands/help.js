@@ -12,8 +12,8 @@ module.exports = {
         const { commands } = message.client;
 
         if (!args.length) {
-            data.push('Oto lista wszystkich moich komend:\n \n');
-            data.push(commands.map(command => command.name).join(', '));
+            data.push('Oto lista wszystkich moich komend:\n');
+            data.push(commands.map(command => command.name).join(',\t'));
             data.push(`\nAby uzyskać info o konkretnej komendzie napisz: \`${prefix}help [command name]\` `);
 
             return message.author.send(data, { split: true })
@@ -39,7 +39,7 @@ module.exports = {
         if (command.description) data.push(`Opis: ${command.description}`);
         if (command.usage) data.push(`Użycie: ${prefix}${command.name} ${command.usage}`);
 
-        data.push(`Cooldown: ${command.cooldown || 3} sekund`);
+        data.push(`Cooldown: ${command.cooldown || 3} sekundy`);
 
         message.channel.send(data, { split: true });
     },

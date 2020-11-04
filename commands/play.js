@@ -66,7 +66,7 @@ module.exports = {
 
         if (urlValid) {
             try {
-                songInfo = await ytdl.getInfo(url);
+                songInfo = await ytdl.getInfo(url, { range: { start: '0' }});
                 song = {
                     title: songInfo.videoDetails.title,
                     url: songInfo.videoDetails.video_url,

@@ -132,11 +132,11 @@ module.exports = {
                     if (queue.volume <= 0) {
                         queue.volume = 100;
                         queue.connection.dispatcher.setVolumeLogarithmic(100 / 100);
-                        queue.textChannel.send(`${user} 🔊 wyciszył odtwarzanie!`).catch(console.error);
+                        queue.textChannel.send(`${user} 🔊 odciszył piosenkę!`).catch(console.error);
                     } else {
                         queue.volume = 0;
                         queue.connection.dispatcher.setVolumeLogarithmic(0);
-                        queue.textChannel.send(`${user} 🔇 odciszył odtwarzanie!`).catch(console.error);
+                        queue.textChannel.send(`${user} 🔇 wyciszył piosenkę!`).catch(console.error);
                     }
                     break;
 

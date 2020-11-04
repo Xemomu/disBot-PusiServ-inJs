@@ -2,8 +2,9 @@ const createBar = require("string-progressbar");
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
-  name: "np",
+  name: "nowplaying",
   description: "Show now playing song",
+  aliases: ["np"],
   execute(message) {
     const queue = message.client.queue.get(message.guild.id);
     if (!queue) return message.reply("Nic nie leci.").catch(console.error);
