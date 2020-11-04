@@ -12,7 +12,7 @@ module.exports = {
         const { commands } = message.client;
 
         if (!args.length) {
-            data.push('Oto lista wszystkich moich komend:');
+            data.push('Oto lista wszystkich moich komend:\n \n');
             data.push(commands.map(command => command.name).join(', '));
             data.push(`\nAby uzyskać info o konkretnej komendzie napisz: \`${prefix}help [command name]\` `);
 

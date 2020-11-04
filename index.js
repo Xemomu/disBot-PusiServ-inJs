@@ -1,8 +1,9 @@
 const fs = require('fs')
 const Discord = require('discord.js');
 const { prefix, token } = require('./config.json');
+require('ytdl-core');
 
-const client = new Discord.Client();
+const client = new Discord.Client({disableMentions: "everyone"});
 client.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -12,14 +13,21 @@ for (const file of commandFiles) {
 
     client.commands.set(command.name, command);
 }
-
+client.queue = new Map();
 const cooldowns = new Discord.Collection();
 
 client.once('ready', () => {
-    console.log('Ready!');
+    console.log(`${client.user.username} ready!`);
 });
-
-client.on('message', message => {
+client.once('reconnecting', () => {
+    console.log('Reconnecting!');
+});
+client.once('disconnect', () => {
+    console.log('Disconnect!');
+});
+client.once("warn", (info) => console.log(info));
+client.once("error", console.error);
+client.once('message', message => {
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     const args = message.content.slice(prefix.length).trim().split(/ +/);
@@ -31,7 +39,7 @@ client.on('message', message => {
         if (!command) return;
 
     if (command.args && !args.length) {
-        return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+        return message.channel.send(`Nie podałeś/łaś żadnego argumentu, ${message.author}!`);
     }
 
     // if (command.guildOnly && message.channel.type === 'dm') {

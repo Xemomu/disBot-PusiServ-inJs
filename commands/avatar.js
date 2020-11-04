@@ -2,6 +2,7 @@ module.exports = {
     name: 'avatar',
     description: 'Zwraca link do twojego avataru, lub avataru otagowanego użytkownika',
     aliases: ['icon', 'pfp'],
+
     execute(message) {
         if (!message.mentions.users.size) {
             return message.channel.send(`Twój avatar: <${message.author.displayAvatarURL({ dynamic: true })}>`);
