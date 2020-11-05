@@ -3,6 +3,6 @@ module.exports = {
     description: 'Ping!',
     cooldown: 10,
     execute(message) {
-        message.channel.send('Jeb się.');
+        message.channel.send('Idź se.');
     },
 };
