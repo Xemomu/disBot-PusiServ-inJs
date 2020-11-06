@@ -1,11 +1,16 @@
 {
+  "engines": {
+    "node": "14.15.0",
+    "npm": "*"
+  },
   "name": "disbot-pusiserv-injs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start:dev": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
