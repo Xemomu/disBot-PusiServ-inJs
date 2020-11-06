@@ -5,8 +5,8 @@ const { join } = require("path");
 let TOKEN, PREFIX;
 try {
     const config = require("./config.json");
-    TOKEN = config.token;
-    PREFIX = config.prefix;
+    TOKEN = config.TOKEN;
+    PREFIX = config.PREFIX;
 } catch (error) {
     TOKEN = process.env.TOKEN;
     PREFIX = process.env.PREFIX;
