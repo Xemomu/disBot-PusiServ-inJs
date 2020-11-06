@@ -4,6 +4,9 @@ module.exports = {
     execute(message, args) {
         const amount = parseInt(args[0]) + 1;
 
+        if (!message.member.hasPermission('MOVE_MEMBERS'))
+            return message.reply("Nie masz uprawnień do wykonania tej komendy!");
+
         if (isNaN(amount)) {
             return message.reply('To nie wygląda na poprawną liczbę deklu\nPodaj liczbę z zakresu 1-100 po !clear');
         } else if (amount <= 1 || amount > 100) {
