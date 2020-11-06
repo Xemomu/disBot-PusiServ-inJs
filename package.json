@@ -2,7 +2,7 @@
   "name": "disbot-pusiserv-injs",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./index.js",
   "engines": {
     "node": "14.15.0",
     "npm": "6.14.8"
