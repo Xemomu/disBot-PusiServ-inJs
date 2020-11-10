@@ -1,8 +1,6 @@
 module.exports = {
-    name: 'ping',
-    description: 'Ping!',
-    cooldown: 10,
-    execute(message) {
-        message.channel.send('Idź se.');
+    maxArgs: 0,
+    callback: (message) => {
+        message.reply('idź se')
     },
 };

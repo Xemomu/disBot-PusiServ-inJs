@@ -1,6 +1,7 @@
 const { Client, Collection } = require("discord.js");
 const { readdirSync } = require("fs");
 const { join } = require("path");
+const WOKCommands = require('wokcommands')
 
 let TOKEN, PREFIX;
 try {
@@ -26,6 +27,9 @@ const escapeRegex = (str) => str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
  */
 client.on("ready", () => {
     console.log(`${client.user.username} ready!`);
+    new WOKCommands(client, 'commands', 'features')
+        .setSyntaxError('Niepoprawnie użyta komenda! Przykład poprawnego użycia: {PREFIX}{COMMAND} {ARGUMENTS}')
+        .setDefaultPrefix('!')
     client.user.setActivity(`twoją matkę`, { type : "WATCHING" });
 });
 client.on("warn", (info) => console.log(info));
@@ -34,11 +38,11 @@ client.on("error", console.error);
 /**
  * Import all commands
  */
-const commandsFiles = readdirSync(join(__dirname, "commands")).filter((file) => file.endsWith(".js"));
-for (const file of commandsFiles) {
-    const command = require(join(__dirname, "commands", `${file}`));
-    client.commands.set(command.name, command);
-}
+// const commandsFiles = readdirSync(join(__dirname, "commands")).filter((file) => file.endsWith(".js"));
+// for (const file of commandsFiles) {
+//     const command = require(join(__dirname, "commands", `${file}`));
+//     client.commands.set(command.name, command);
+// }
 
 
 client.on("message", async (message) => {
@@ -91,6 +95,29 @@ client.on("message", async (message) => {
         message.reply("Wystąpił błąd przy próbie wykonania tej komendy.").catch(console.error);
     }
 });
+
+client.on("guildMemberAdd", (member) => {
+    console.log(`${member.id} dołączył`)
+    //member.roles.add(member.guild.roles.cache.find(i => i.name === ''))
+    //console.log(`New User "${member.user.username}" dołączył na serwer "${member.guild.name}"` );
+    member.guild.channels.find(c => c.name === "👋-pusiteam").send(`"${member.user.username}" dołączył na serwer`);
+    // const welcomeEmbed = new Client.MessageEmbed()
+    //     .setColor('#5cf000')
+    //     .setTitle('Witaj na serwerze' + member.user.username)
+    //
+    //
+    // member.guild.channels.get('773164762275119166').send(welcomeEmbed);
+
+
+
+    // const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'ogólne')
+    // const embed = new Client.MessageEmbed()
+    //     .setTitle(`Witaj na kanale ${member}!`)
+    //     .addField(`Zanim cokolwiek tu zrobisz zapoznaj się z regulaminem `)
+    // welcomeChannel.send (embed);
+})
+
+
 
 
 
