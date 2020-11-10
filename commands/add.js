@@ -1,11 +1,7 @@
 const fs = require('fs');
 
 module.exports = {
-    name: 'add',
-    description: 'Dodaj gościa do listy zjebów.',
-    args: true,
-    execute(message, args) {
-
+    callback: (message, args) => {
         if (!args.length)
             return message
                 .reply(`Podaj kogo chcesz dodać do listy`)
@@ -15,7 +11,6 @@ module.exports = {
         
         fs.writeFile('lista.txt', nick, (err) => {
 
-            Zjebów
             if (err) throw err;
         })
     },

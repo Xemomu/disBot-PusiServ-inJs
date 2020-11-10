@@ -1,14 +1,12 @@
 const Discord = require('discord.js')
 
 module.exports = {
-    name: 'avatar',
-    description: 'Zwraca link do twojego avataru, lub avataru otagowanego użytkownika',
-    aliases: ['icon'],
-    execute(message) {
+    minArgs: 0,
+    maxArgs: 1,
+    callback: (message) => {
             let member = message.mentions.users.first() || message.author
 
             let avatar = member.displayAvatarURL({size: 1024})
-
 
             const embed = new Discord.MessageEmbed()
                 .setTitle(`Avatar ${member.username}`)

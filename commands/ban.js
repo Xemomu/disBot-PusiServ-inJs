@@ -1,10 +1,9 @@
-const Discord = require('discord.js');
+const Discord = require('discord.js')
 
 module.exports = {
-    name: "ban",
-    description: "Banuje wybranego członka serwera",
-
-    execute: function (message, args) {
+    minArgs: 0,
+    maxArgs: 1,
+    callabck: function (message, args) {
 
         if (!message.member.hasPermission("BAN_MEMBERS")) return message.channel.send('Nie masz uprawnień do wykonania tej komendy!')
         if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.channel.send('Nie mam uprawnień do wykonania tej komendy.')
@@ -36,7 +35,5 @@ module.exports = {
             .setTimestamp()
 
         message.channel.send(banembed);
-
-
     }
 }
