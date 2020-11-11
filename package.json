@@ -10,7 +10,6 @@
   "scripts": {
     "start:dev": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prestart": "node index.js",
     "start": "node index.js"
   },
   "repository": {
@@ -39,7 +38,14 @@
     "string-progressbar": "^1.0.1",
     "weather-js": "^2.0.0",
     "welcome": "0.0.1",
-    "ytdl-core": "^4.0.3"
+    "ytdl-core": "^4.0.3",
+    "discord.js-commando": "^0.10.0",
+    "enmap": "^5.8.0",
+    "lyrics-finder": "^21.4.0",
+    "simple-youtube-api": "^5.2.1",
+    "soundcloud-downloader": "^0.1.8",
+    "webpack-dev-server": "^3.11.0",
+    "ytdl-core-discord": "^1.2.4"
   },
   "devDependencies": {
     "discord.js-commando": "^0.10.0",
