@@ -10,7 +10,7 @@
   "scripts": {
     "start:dev": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node ./index.js"
   },
   "repository": {
     "type": "git",
