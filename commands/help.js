@@ -36,7 +36,7 @@ module.exports = {
             .addField('`!volume`', 'Ustaw głośność odtwarzania (0-100)')
             .addField('`!lyrics`', 'Wyświetl tekst aktualnie odtwarzanego utworu')
             .addField('`!nowplaying`', 'Pokaż co jest aktualnie odtwarzane')
-            .addField('`!stop`', 'Zapętl aktualnie odtwarzany utwór')
+            .addField('`!loop`', 'Zapętl aktualnie odtwarzany utwór')
             .addField('`!shuffle`', 'Wymieszaj kolejność piosenek w kolejce')
             .setTimestamp()
 
