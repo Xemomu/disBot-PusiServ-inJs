@@ -1,6 +1,4 @@
 const { Client, Collection } = require("discord.js");
-const { readdirSync } = require("fs");
-const { join } = require("path");
 const WOKCommands = require('wokcommands')
 
 let TOKEN, PREFIX;
@@ -29,8 +27,14 @@ client.on("ready", () => {
     console.log(`${client.user.username} ready!`);
     new WOKCommands(client, 'commands', 'features')
         .setSyntaxError('Niepoprawnie użyta komenda! Przykład poprawnego użycia: {PREFIX}{COMMAND} {ARGUMENTS}')
-        .setDefaultPrefix('!')
-    client.user.setActivity(`twoją matkę`, { type : "WATCHING" });
+        .setDefaultPrefix('!');
+    client.user.setPresence({
+        game: {
+            name: 'twoją matkę',
+            type: "WATCHING",
+        }
+    });
+    //client.user.setPresence(`twoją matkę`, { type : "WATCHING" });
 });
 client.on("warn", (info) => console.log(info));
 client.on("error", console.error);
