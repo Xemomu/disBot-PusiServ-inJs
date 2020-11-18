@@ -1,1 +1,1 @@
-worker: node ./disBot-PusiServ-inJs/index.js
+worker: node ./index.js
