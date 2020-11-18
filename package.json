@@ -26,7 +26,6 @@
     "@discordjs/opus": "^0.3.3",
     "better-sqlite3": "^7.1.1",
     "common-tags": "^1.8.0",
-    "discord.js": "^12.4.1",
     "discord.js-pagination": "^1.0.2",
     "ffmpeg-static": "^4.2.7",
     "got": "^11.8.0",
@@ -48,11 +47,13 @@
     "ytdl-core-discord": "^1.2.4"
   },
   "devDependencies": {
+    "discord.js": "^11.2.0",
     "discord.js-commando": "^0.10.0",
     "enmap": "^5.8.0",
     "lyrics-finder": "^21.4.0",
     "simple-youtube-api": "^5.2.1",
     "soundcloud-downloader": "^0.1.8",
+    "sqlite": "^4.0.17",
     "webpack-dev-server": "^3.11.0",
     "ytdl-core-discord": "^1.2.4"
   }
